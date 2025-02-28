@@ -1,9 +1,9 @@
-from services import service04oracledepartamentos as service
+from services import service04oracledepartamentos as service### como se llama el fichero de service
 from models import departamento
 
 print("----SERVICIO ORACLE DEPARTAMENTOS")
 #NECESITAMOS UNA OBJETO DE TIPO SERVICIO PARA TRABAJAR
-servicio = service.ServiceOracleDepartamentos()
+servicio = service.ServiceOracleDepartamentos() ###como se llama la clase, la cual esta dentro del fichero de service
 print("------------DEPARTAMENTOS----------")
 datos = servicio.getAllDepartamentos()
 for dept in datos:

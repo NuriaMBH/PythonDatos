@@ -1,9 +1,9 @@
 from models import doctor as model
-from services import service05oracledoctores as service
+from services import service05oracledoctores as service### como se llama el fichero de service
 
 
 print("-------CRUD DOCTORES-----")
-servicio = service.ServiceOracleDoctores()
+servicio = service.ServiceOracleDoctores()###como se llama la clase, la cual esta dentro del fichero de service
 doctores = servicio.getAllDoctores ()
 for doc in doctores:
     print(f"{doc.idDoctor}{doc.apellido}, Especialidad:{doc.especialidad},{doc.salario}")
@@ -28,7 +28,7 @@ if (opcion ==1):
     print(f"Doctores insertados:{reg}")
 elif (opcion==2):
     print("Introduzca ID a eliminar")
-    iddoctor= int(inout())
+    iddoctor= int(input())
     registros = servicio.eliminarDoctor(iddoctor)
     print(f"Doctores eliminados: {registros}")
 elif(opcion==3):

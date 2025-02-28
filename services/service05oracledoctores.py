@@ -39,7 +39,7 @@ def eliminarDoctor(self, iddoctor):
 def modificarDoctor(self,iddoctor,apellido,espe,salario,hospital):
     sql="""
         update DOCTOR set APELLIDO=p1, ESPECIALIDAD=:p2
-        ,SALARIO=p3,HOSPITAL_COD=:p4
+        ,SALARIO=:p3,HOSPITAL_COD=:p4
         where DOCTOR_NO=p5
     """
     cursor = self.connection.cursor()
