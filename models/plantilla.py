@@ -3,4 +3,4 @@ class Plantilla:
     apellido=""
     funcion=""
     salario= 0
-    hospital= ""
+    hospital= 0

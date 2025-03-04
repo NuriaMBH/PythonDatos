@@ -1,13 +1,9 @@
-#getPlantilla(): mostrara los datos(listado de la plantilla)
-#updateSalarioPlantilla():modificara el salario de la plantilla de un hospital 
-#con un incremento que le daremos y con un numero de hospital
-import oracledb
+import pyodbc
 from models.plantilla import Plantilla
 
 class ServicePlantilla:
     def __init__(self):
-        self.connection = oracledb.connect(user='SYSTEM', password='oracle'
-                                           , dsn='localhost/xe') 
+        self.connection = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};SERVER=localhost;DATABASE=HOSPITAL;UID=SA;PWD=Getafe12345@@;TrustServerCertificate=yes') 
     
     def getPlantilla(self):
         sql = "select * from PLANTILLA"
@@ -26,7 +22,7 @@ class ServicePlantilla:
         return data
 
     def updateSalarioPlantilla(self, incremento, hospital):
-        sql = "update PLANTILLA set SALARIO=SALARIO + :p1 where HOSPITAL_COD=:p2"
+        sql = "update PLANTILLA set SALARIO=SALARIO + ? where HOSPITAL_COD=?"
         cursor = self.connection.cursor()
         cursor.execute(sql, (incremento, hospital))
         registros = cursor.rowcount
